@@ -6,18 +6,18 @@ plugins {
 
 ext {
     PUBLISH_GROUP_ID = 'io.github.jubongoh'
-    PUBLISH_VERSION = '0.9.1'
-    PUBLISH_ARTIFACT_ID = 'ringlib'
-    PUBLISH_DESCRIPTION = 'ring lib'
-    PUBLISH_URL = 'https://github.com/jubongoh/madLib'
+    PUBLISH_VERSION = '1.0.1'
+    PUBLISH_ARTIFACT_ID = 'libtest'
+    PUBLISH_DESCRIPTION = 'Lib Test'
+    PUBLISH_URL = 'https://github.com/jubongoh/libTest'
     PUBLISH_LICENSE_NAME = 'MIT License'
-    PUBLISH_LICENSE_URL = 'https://github.com/jubongoh/madLib/blob/main/README.md'
+    PUBLISH_LICENSE_URL = 'https://github.com/jubongoh/libTest/blob/main/README.md'
     PUBLISH_DEVELOPER_ID = 'jubongoh'
     PUBLISH_DEVELOPER_NAME = 'Oh Jubong'
     PUBLISH_DEVELOPER_EMAIL = 'jubong.oh@gmail.com'
-    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/jubongoh/madLib.git'
-    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/jubongoh/madLib.git'
-    PUBLISH_SCM_URL = 'https://github.com/jubongoh/madLib/tree/ring_lib'
+    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/jubongoh/libTest.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/jubongoh/libTest.git'
+    PUBLISH_SCM_URL = 'https://github.com/jubongoh/libTest/tree/main/testlibrary'
 }
 
 apply from: "${rootProject.projectDir}/publish-module.gradle"
