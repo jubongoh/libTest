@@ -64,9 +64,9 @@ afterEvaluate {
                         }
                     }
                     scm {
-                        connection = PUBLISH_SCM_CONNECTION
-                        developerConnection = PUBLISH_SCM_DEVELOPER_CONNECTION
-                        url = PUBLISH_SCM_URL
+                        connection = "scm:git:github.com/jubongoh/libTest.git"
+                        developerConnection = "scm:git:ssh://github.com/jubongoh/libTest.git"
+                        url = "https://github.com/jubongoh/libTest/tree/main/testlibrary"
                     }
                 }
             }

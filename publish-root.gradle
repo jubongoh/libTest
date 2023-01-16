@@ -25,9 +25,9 @@ if (secretPropsFile.exists()) {
 
 /*ext["rootVersionName"] = PUBLISH_VERSION*/
 if (snapshot.toBoolean()) {
-    ext["rootVersionName"] = PUBLISH_VERSION + '-SNAPSHOT'
+    ext["rootVersionName"] = TESTLIB_PUBLISH_VERSION + '-SNAPSHOT'
 } else {
-    ext["rootVersionName"] = PUBLISH_VERSION
+    ext["rootVersionName"] = TESTLIB_PUBLISH_VERSION
 }
 
 nexusPublishing {
