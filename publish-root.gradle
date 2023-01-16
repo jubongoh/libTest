@@ -4,6 +4,7 @@ ext["signing.keyId"] = ''
 ext["signing.password"] = ''
 ext["signing.key"] = ''
 ext["sonatypeStagingProfileId"] = ''
+ext["snapshot"] = true
 /*ext["signing.secretKeyRingFile"] = ''*/
 
 File secretPropsFile = project.rootProject.file('local.properties')
@@ -18,10 +19,16 @@ if (secretPropsFile.exists()) {
     ext["sonatypeStagingProfileId"] = System.getenv('SONATYPE_STAGING_PROFILE_ID')
     ext["signing.password"] = System.getenv('SIGNING_PASSWORD')
     ext["signing.key"] = System.getenv('SIGNING_KEY')
+    ext["snapshot"] = true
     /*ext["signing.secretKeyRingFile"] = System.getenv('SIGNING_SECRET_KEY_RING_FILE')*/
 }
 
 /*ext["rootVersionName"] = PUBLISH_VERSION*/
+if (snapshot.toBoolean()) {
+    ext["rootVersionName"] = PUBLISH_VERSION + '-SNAPSHOT'
+} else {
+    ext["rootVersionName"] = PUBLISH_VERSION
+}
 
 nexusPublishing {
     repositories {
@@ -31,7 +38,7 @@ nexusPublishing {
             stagingProfileId = sonatypeStagingProfileId
             username = ossrhUsername
             password = ossrhPassword
-
+            version = rootVersionName
         }
     }
 }

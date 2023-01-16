@@ -7,7 +7,7 @@ plugins {
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
-
+apply from: "${rootDir}/configuration.gradle"
 
 task androidSourcesJar(type: Jar) {
     archiveClassifier.set('sources')
@@ -53,9 +53,14 @@ afterEvaluate {
                     }
                     developers {
                         developer {
-                            id = PUBLISH_DEVELOPER_ID
-                            name = PUBLISH_DEVELOPER_NAME
-                            email = PUBLISH_DEVELOPER_EMAIL
+                            id = "jubongoh"
+                            name = "Oh Jubong"
+                            email = "jubong.oh@gmail.com"
+                        }
+                        developer {
+                            id = "blackzom"
+                            name = "black zom"
+                            email = "blackzom@gmail.com"
                         }
                     }
                     scm {

@@ -4,6 +4,7 @@ plugins {
     //id 'com.github.dcendents.android-maven' // 추가
 }
 
+/*
 ext {
     PUBLISH_GROUP_ID = 'io.github.jubongoh'
     PUBLISH_VERSION = '1.0.1'
@@ -19,8 +20,9 @@ ext {
     PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/jubongoh/libTest.git'
     PUBLISH_SCM_URL = 'https://github.com/jubongoh/libTest/tree/main/testlibrary'
 }
+*/
 
-apply from: "${rootProject.projectDir}/publish-module.gradle"
+apply from: "${rootProject.projectDir}/publish-maven.gradle"
 
 android {
     compileSdk 32

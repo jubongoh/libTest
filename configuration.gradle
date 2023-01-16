@@ -1,0 +1,20 @@
+ext {
+
+    def versionMajor = 1
+    def versionMinor = 0
+    def versionPatch = 2
+    PUBLISH_VERSION = "$versionMajor.$versionMinor.$versionPatch"
+
+    PUBLISH_GROUP_ID = "io.github.jubongoh"
+    PUBLISH_ARTIFACT_ID = 'libtest'
+    PUBLISH_DESCRIPTION = 'Lib Test'
+    PUBLISH_URL = 'https://github.com/jubongoh/libTest'
+
+    PUBLISH_LICENSE_NAME = 'Jubong License'
+    PUBLISH_LICENSE_URL = 'https://github.com/jubongoh/libTest/blob/main/README.md'
+
+    PUBLISH_SCM_CONNECTION = 'scm:git:github.com/jubongoh/libTest.git'
+    PUBLISH_SCM_DEVELOPER_CONNECTION = 'scm:git:ssh://github.com/jubongoh/libTest.git'
+    PUBLISH_SCM_URL = 'https://github.com/jubongoh/libTest/tree/main/testlibrary'
+
+}
