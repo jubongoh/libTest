@@ -2,6 +2,6 @@ ext {
 
     def versionMajor = 1
     def versionMinor = 0
-    def versionPatch = 3
+    def versionPatch = 4
     TESTLIB_PUBLISH_VERSION = "$versionMajor.$versionMinor.$versionPatch"
 }
