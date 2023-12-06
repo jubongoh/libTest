@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ToastClass.showToast(MainActivity.this, "bbbbbbbbb");
+                ToastClass.showToast(MainActivity.this, "bbbbbb");
             }
         });
 

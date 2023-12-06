@@ -7,7 +7,7 @@ plugins {
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
-
+apply from: "${rootDir}/configuration.gradle"
 
 task androidSourcesJar(type: Jar) {
     archiveClassifier.set('sources')
@@ -42,26 +42,31 @@ afterEvaluate {
                 artifact androidSourcesJar
 
                 pom {
-                    name = PUBLISH_ARTIFACT_ID
+                    name = 'libtest name'
                     description = PUBLISH_DESCRIPTION
                     url = PUBLISH_URL
                     licenses {
                         license {
-                            name = PUBLISH_LICENSE_NAME
-                            url = PUBLISH_LICENSE_URL
+                            name = "MIT License"
+                            url = "https://github.com/jubongoh/libTest/blob/main/README.md"
                         }
                     }
                     developers {
                         developer {
-                            id = PUBLISH_DEVELOPER_ID
-                            name = PUBLISH_DEVELOPER_NAME
-                            email = PUBLISH_DEVELOPER_EMAIL
+                            id = "jubongoh"
+                            name = "Oh Jubong"
+                            email = "jubong.oh@gmail.com"
+                        }
+                        developer {
+                            id = "blackzom"
+                            name = "black zom"
+                            email = "blackzom@gmail.com"
                         }
                     }
                     scm {
-                        connection = PUBLISH_SCM_CONNECTION
-                        developerConnection = PUBLISH_SCM_DEVELOPER_CONNECTION
-                        url = PUBLISH_SCM_URL
+                        connection = "scm:git:github.com/jubongoh/libTest.git"
+                        developerConnection = "scm:git:ssh://github.com/jubongoh/libTest.git"
+                        url = "https://github.com/jubongoh/libTest/tree/main/testlibrary"
                     }
                 }
             }

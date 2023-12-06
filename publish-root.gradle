@@ -4,6 +4,7 @@ ext["signing.keyId"] = ''
 ext["signing.password"] = ''
 ext["signing.key"] = ''
 ext["sonatypeStagingProfileId"] = ''
+ext["snapshot"] = false
 /*ext["signing.secretKeyRingFile"] = ''*/
 
 File secretPropsFile = project.rootProject.file('local.properties')
@@ -22,6 +23,11 @@ if (secretPropsFile.exists()) {
 }
 
 /*ext["rootVersionName"] = PUBLISH_VERSION*/
+if (snapshot.toBoolean()) {
+    ext["rootVersionName"] = TESTLIB_PUBLISH_VERSION + '-SNAPSHOT'
+} else {
+    ext["rootVersionName"] = TESTLIB_PUBLISH_VERSION
+}
 
 nexusPublishing {
     repositories {
