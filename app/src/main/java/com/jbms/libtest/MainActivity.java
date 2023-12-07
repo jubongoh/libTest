@@ -9,6 +9,7 @@ import android.widget.Button;
 
 import com.jbms.testlibrary.LibTestActivity;
 import com.jbms.testlibrary.ToastClass;
+import com.jbms.testlibraryui.ToastUiClass;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ToastClass.showToast(this, "aaaaaaaa");
+        //ToastClass.showToast(this, "aaaaaaaa");
 
         Button btn = findViewById(R.id.btn_text);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ToastClass.showToast(MainActivity.this, "bbbbbb");
+            }
+        });
+        Button btn3 = findViewById(R.id.btn_text3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToastUiClass.showToastUI(MainActivity.this, "bbbbbb");
             }
         });
 
