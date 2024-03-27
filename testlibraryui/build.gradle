@@ -3,6 +3,19 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+ext {
+    PUBLISH_VERSION = rootProject.ext["rootVersionName"]
+
+    PUBLISH_GROUP_ID = 'io.github.jubongoh'
+    PUBLISH_ARTIFACT_ID = 'libtest_ui'
+    PUBLISH_NAME = 'libtestUisdk'
+    PUBLISH_DESCRIPTION = 'Lib UI Test SDK'
+    PUBLISH_URL = 'https://github.com/jubongoh/libTest'
+
+}
+
+apply from: "${rootProject.projectDir}/publish-maven.gradle"
+
 android {
     namespace 'com.jbms.testlibraryui'
     compileSdk 33

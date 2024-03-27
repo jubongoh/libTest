@@ -42,7 +42,7 @@ afterEvaluate {
                 artifact androidSourcesJar
 
                 pom {
-                    name = 'libtest name'
+                    name = PUBLISH_NAME
                     description = PUBLISH_DESCRIPTION
                     url = PUBLISH_URL
                     licenses {
