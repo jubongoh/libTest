@@ -6,7 +6,7 @@ plugins {
 }
 
 ext {
-    PUBLISH_VERSION = rootProject.ext["rootVersionName"]
+    PUBLISH_VERSION = rootProject.ext["coreVersionName"]
 
     PUBLISH_GROUP_ID = 'io.github.jubongoh'
     PUBLISH_ARTIFACT_ID = 'libtest'
