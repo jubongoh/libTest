@@ -57,7 +57,7 @@ android {
                     path = "src/main/java"
                     lineSuffix = "#L"
                 }
-                //noJdkLink.set(false)
+                noJdkLink.set(false)
                 noAndroidSdkLink.set(false)
                 // Use to include or exclude non public members
                 includeNonPublic.set(false)
@@ -68,6 +68,33 @@ android {
                 // Emit warnings about not documented members. Applies globally, also can be overridden by packageOptions
                 reportUndocumented.set(true)
 
+                //제외할 패키지
+//                perPackageOption {
+//                    matchingRegex.set("com.jbms.testlibrary.calc.*")
+//                    suppress.set(true)
+//                }
+                // 제외할 패키지 설정
+                //packageOptions {
+                //    prefix = "com.jbms.testlibrary.calc"
+                //    includeNonPublic = false
+                //    reportUndocumented = false
+                 //   excludeNonPublic = true
+                 //   suppress = true
+
+                    //prefix = "com.jbms.testlibrary.calc.*"
+                    //suppress = true
+
+                    //OpenAI
+//                    matchingRegex = "com.jbms.testlibrary.calc.*"
+//                    excludeNonPublic = true
+//                    reportUndocumented = false
+                    //Bing
+                    //prefix.set("com.jbms.testlibrary.calc")
+                    //suppress.set(true)
+                    //.Gemini
+                    //exclude.add("com.jbms.testlibrary.calc")
+                    //excludePattern = "com.jbms.testlibrary.calc.*"
+                //}
             }
         }
     }
@@ -79,8 +106,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
 
-    implementation 'org.jetbrains.dokka:dokka-gradle-plugin:1.6.10'
-    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.6.10")
+    implementation 'org.jetbrains.dokka:dokka-gradle-plugin:1.7.20'
+    dokkaHtmlPlugin("org.jetbrains.dokka:kotlin-as-java-plugin:1.7.20")
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
