@@ -42,11 +42,12 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-
     packagingOptions {
-        exclude 'META-INF/NOTICE.md'
-        exclude 'META-INF/LICENSE.md'
+        resources {
+            excludes += ['META-INF/NOTICE.md', 'META-INF/LICENSE.md']
+        }
     }
+
 
     dokkaHtml {
         dokkaSourceSets {
@@ -68,11 +69,22 @@ android {
                 // Emit warnings about not documented members. Applies globally, also can be overridden by packageOptions
                 reportUndocumented.set(true)
 
-                //제외할 패키지
+                // 원하는 패키지만 포함한다.
 //                perPackageOption {
-//                    matchingRegex.set("com.jbms.testlibrary.calc.*")
+//                    // Match all packages and suppress them
+//                    matchingRegex.set("(.*?)")
 //                    suppress.set(true)
 //                }
+//                perPackageOption {
+//                    matchingRegex.set("com.jbms.testlibrary.calc")
+//                    suppress.set(false)
+//                }
+
+                //제외할 패키지
+                //perPackageOption {
+                //    matchingRegex.set("com.jbms.testlibrary.calc")
+                //    suppress.set(true)
+                //}
                 // 제외할 패키지 설정
                 //packageOptions {
                 //    prefix = "com.jbms.testlibrary.calc"
@@ -98,6 +110,7 @@ android {
             }
         }
     }
+    namespace 'com.jbms.testlibrary'
 }
 
 dependencies {

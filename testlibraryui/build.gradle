@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.dokka'
 }
 
 ext {
@@ -41,6 +42,30 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dokkaHtml {
+        dokkaSourceSets {
+            outputDirectory.set(new File("$buildDir/dokka"))
+
+            named("main") {
+                sourceLink {
+                    path = "src/main/java"
+                    lineSuffix = "#L"
+                }
+                noJdkLink.set(false)
+                noAndroidSdkLink.set(false)
+                // Use to include or exclude non public members
+                includeNonPublic.set(false)
+                // Used for linking to JDK documentation
+                jdkVersion.set(8)
+                // Do not create index pages for empty packages
+                skipEmptyPackages.set(true)
+                // Emit warnings about not documented members. Applies globally, also can be overridden by packageOptions
+                reportUndocumented.set(true)
+            }
+        }
+    }
+
 }
 
 dependencies {
