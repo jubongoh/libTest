@@ -48,10 +48,36 @@ android {
         }
     }
 
+    /*dokkaHtmlPartial {
+        dokkaSourceSets {
+            outputDirectory.set(new File("$buildDir/dokka"))
+            configureEach {
+
+                // 우선 모든 파일을 문서 안만들게 한다음에
+//                perPackageOption {
+//                    matchingRegex.set(".*?")
+//                    suppress.set(true)
+//                }
+                // 원하는 패키지만 포함한다.
+                perPackageOption {
+                    matchingRegex.set("com.jbms.testlibrary.calc.*")
+                    suppress.set(true)
+                }
+            }
+        }
+    }*/
 
     dokkaHtml {
         dokkaSourceSets {
             outputDirectory.set(new File("$buildDir/dokka"))
+
+            configureEach {
+                //제외 패키지를 입력
+                perPackageOption {
+                    matchingRegex.set("com.jbms.testlibrary.calc.*")
+                    suppress.set(true)
+                }
+            }
 
             named("main") {
                 sourceLink {
