@@ -3,6 +3,7 @@ buildscript {
     dependencies {
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
         classpath 'io.github.gradle-nexus:publish-plugin:1.1.0'
+        classpath "org.jetbrains.dokka:dokka-gradle-plugin:1.7.20" // 사용하는 Dokka 버전을 지정
     }
 }
 
@@ -13,10 +14,40 @@ plugins {
     id 'org.jetbrains.dokka' version '1.7.20'
 }
 
+//dokkaHtml {
+//    dokkaSourceSets {
+//        configureEach {
+//            moduleName.set(project.name)
+//            outputDirectory.set(new File("$buildDir/../dokka"))
+//
+//            named("main") {
+//                include("**/*.java")
+//                include("**/*.kt")
+//                sourceLink {
+//                    path = "src/main/java"
+//                    lineSuffix = "#L"
+//                }
+//                noJdkLink.set(false)
+//                noAndroidSdkLink.set(false)
+//                includeNonPublic.set(false)
+//                jdkVersion.set(8)
+//                skipEmptyPackages.set(true)
+//                reportUndocumented.set(true)
+//            }
+//        }
+//    }
+//}
+
+// sub module 의 설정에는 영향을 미치지 않음.
+tasks.dokkaHtmlMultiModule {
+    moduleName.set("Dokka MultiModule Example")
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'io.github.gradle-nexus.publish-plugin'
 apply from: "${rootDir}/configuration.gradle"
 apply from: "${rootDir}/publish-root.gradle"

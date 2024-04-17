@@ -43,7 +43,7 @@ android {
         jvmTarget = '1.8'
     }
 
-    dokkaHtml {
+    dokkaHtmlPartial {
         dokkaSourceSets {
             outputDirectory.set(new File("$buildDir/dokka"))
 
