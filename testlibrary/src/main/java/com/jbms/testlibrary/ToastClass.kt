@@ -15,7 +15,7 @@ class ToastClass {
          */
         @JvmStatic
         fun showToast(context: Context, message:String) =
-            Toast.makeText(context, "library1 - $message", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "library core 1.2.3 - $message", Toast.LENGTH_SHORT).show()
 
     }
 }
