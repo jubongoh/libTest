@@ -12,7 +12,7 @@ class ToastUiClass {
          */
         @JvmStatic
         fun showToastUI(context: Context, message:String) =
-            Toast.makeText(context, "library2 ui - $message", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "library2 ui 1.3.1 - $message", Toast.LENGTH_SHORT).show()
 
     }
 }

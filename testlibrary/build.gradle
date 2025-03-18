@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     //id 'com.github.dcendents.android-maven' // 추가
     id 'org.jetbrains.dokka'
+    id 'maven-publish'
+    id 'signing'
 }
 
 ext {
@@ -96,6 +98,10 @@ android {
                 reportUndocumented.set(true)
             }
         }
+    }
+
+    publishing {
+        singleVariant("release")
     }
     namespace 'com.jbms.testlibrary'
 }
